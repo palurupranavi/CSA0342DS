@@ -1,0 +1,77 @@
+#include<stdio.h>
+int t=-1,a[100],n=4,i;
+int c,x;
+void push();
+void pop();
+void show();
+int main()
+{
+	while(1)
+	{
+	printf("\nperform the operations on stack");
+	printf("\n1.push the element\n2.pop the element\nshow the element");
+	printf("\nenter the choice");
+	scanf("%d",&c);
+	switch (c)
+	{
+		case 1:
+			{
+			push();
+			break;
+		}
+		case 2:
+			{
+				pop();
+				break;
+			}
+		case 3:
+			{
+				show();
+				break;
+		}
+}
+			
+	}
+}
+	void push()
+	{
+		int x;
+		if(t==n-1)
+			{
+				printf("\noverflow!!");
+			}
+			else
+			{
+				printf("enter the element: ");
+				scanf("%d",&x);
+				t=t+1;
+				a[t]=x;
+			}
+	}
+	void pop()
+	{
+		if(t==-1)
+		{
+					printf("\nUnderflow!!");
+		}
+				else
+				{
+					printf("popped element:%d",a[t]);
+					t=t-1;
+				}
+	}
+	void show()
+	{
+		if(t==-1)
+				{
+					printf("\nUnderflow!!");
+				}
+				else
+				{
+					printf("elements present in the stack: \n");
+					for(i=t;i>=0;--i)
+					{
+						printf("%d\n",a[i]);
+					}
+				}
+	}
